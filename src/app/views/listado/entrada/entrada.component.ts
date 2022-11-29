@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Entrada } from 'src/app/share/interface/entrada';
 
 @Component({
@@ -8,7 +8,9 @@ import { Entrada } from 'src/app/share/interface/entrada';
 })
 export class EntradaComponent implements OnInit {
   @Input()
-  public entrada: Entrada;
+  public entrada: any;
+  @Output()
+  public doEvent: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {
     this.entrada = {
@@ -23,5 +25,9 @@ export class EntradaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  public lanzarTitulo(): void {
+    this.doEvent.emit(this.entrada.body);
+  } 
 
 }
