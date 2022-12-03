@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
 
     this.loginService.login(this.usuario).subscribe(
       (data: number) => {
-        localStorage.setItem('nombreUsuario', this.usuario.nombre);
         this.tokenService.setToken(data);
+        this.tokenService.setNombreUsuario(this.usuario.nombre);
 
         this.router.navigate(['/listado']);
       },
