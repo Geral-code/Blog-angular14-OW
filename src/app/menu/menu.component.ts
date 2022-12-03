@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../share/services/token.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,31 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  // Atributos
   public miToken: number;
   public nombreUsuario: string | null;  
 
-  constructor() {
+  constructor(private tokenService: TokenService) {
     this.miToken = 0;
-    this.nombreUsuario = "";
+    this.nombreUsuario = '';
+    
    }
 
   ngOnInit(): void {
+
+    this.tokenService.token$.subscribe(
+      (token: number) => {
+        this.miToken = token;
+      }
+    )
   
 
-  if (localStorage.getItem('miTokenPersonal')) {
-    this.miToken = +localStorage.getItem('miTokenPersonal')!;
-  }
-
-  if (localStorage.getItem('miTokenPersonal')) {
-    this.nombreUsuario = localStorage.getItem('nombreUsuario');
-  }
+ 
 
 }
-
-public logout(): void {
-  if (localStorage.getItem('miTokenPersonal')) {
-    localStorage.removeItem('miTokenPersonal');
-  }
-}
-
 }

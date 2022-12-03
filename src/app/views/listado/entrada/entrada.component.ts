@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Entrada } from 'src/app/share/interface/entrada';
+import { __makeTemplateObject } from 'tslib';
 
 @Component({
   selector: 'app-entrada',
