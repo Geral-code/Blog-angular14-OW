@@ -31,4 +31,11 @@ export class EntradaComponent implements OnInit {
     this.doEvent.emit(this.entrada.body);
   } 
 
+  public modificarClase(): any {
+    return {
+      'claro': this.entrada.id % 2 == 0,
+      'oscuro': this.entrada.id % 2 != 0
+    }
+  }
+
 }
