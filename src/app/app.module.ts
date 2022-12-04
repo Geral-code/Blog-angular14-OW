@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PaginaNoencontradaComponent } from './views/pagina-noencontrada/pagina-noencontrada.component';
 import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-nosotros.component';
 import { LoginComponent } from './views/login/login.component';
+import { EspejoPipe } from './share/pipes/espejo.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoginComponent } from './views/login/login.component';
     EntradaComponent,
     PaginaNoencontradaComponent,
     AcercaDeNosotrosComponent,
-    LoginComponent
+    LoginComponent,
+    EspejoPipe
   ],
   imports: [
     BrowserModule,

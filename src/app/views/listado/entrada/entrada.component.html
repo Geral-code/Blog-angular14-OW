@@ -1,8 +1,8 @@
 <div id="entrada" 
-(click)="lanzarTitulo()">
+(click)="lanzarTitulo()"
 [ngClass]="modificarClase()">
 
 
-    <h4>{{ entrada.title }}</h4>
+    <h4>{{ entrada.title | uppercase | espejo }}</h4>
     <p>{{ entrada.body }}</p>
   </div>
